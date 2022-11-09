@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spoitfy web player</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="assets/js/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <audio id="clocks">
+            <source src="assets/audio/clocks.mp3" type="audio/mp3">
+            <source src="assets/audio/clocks.ogg" type="audio/ogg">
+        </audio>
+        <audio id="high">
+            <source src="assets/audio/Highonlife.mp3" type="audio/mp3">
+            <source src="assets/audio/Highonlife.ogg" type="audio/ogg">
+        </audio>
+        <audio id="ocean">
+            <source src="assets/audio/ocean.mp3" type="audio/mp3">
+            <source src="assets/audio/ocean.ogg" type="audio/ogg">
+        </audio>
+        <audio id="skyfull">
+            <source src="assets/audio/skyfull.mp3" type="audio/mp3">
+            <source src="assets/audio/skyfull.ogg" type="audio/ogg">
+        </audio>
+        <audio id="weare">
+            <source src="assets/audio/wearethepeople.mp3" type="audio/mp3">
+            <source src="assets/audio/wearethepeople.ogg" type="audio/ogg">
+        </audio>
+
+       <ul>
+        <li><img class="cover" src="assets/images/clocks.jpeg" alt="clocks" onclick="playSong('clocks');"></li>
+        <li><img class="cover" src="assets/images/highonlife.jpeg" alt="highonlife" onclick="playSong('high');"></li>
+        <li><img class="cover" src="assets/images/ocean.jpeg" alt="ocean" onclick="playSong('ocean');"></li>
+        <li><img class="cover" src="assets/images/skyfull.jpeg" alt="skyfull" onclick="playSong('skyfull');"></li>
+        <li><img class="cover" src="assets/images/wearethepeople.jpeg" alt="wearethepeople" onclick="playSong('weare');"></li>
+    </ul>
+    <script>
+        function playSong(songId) {
+        document.getElementById(songId).play();
+
+            // var x = document.getElementById("clocks");
+            // alert(`Play song with index ${index}`);
+            // x.play();
+        }
+    </script>
+</body>
+</html>

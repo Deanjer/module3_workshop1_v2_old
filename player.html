@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/player.css" />
+    <script>
+      let slideIndex = 1;
+
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        let captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+      //   currentSlide(songId)
+      //   document.getElementById(songId).play();
+
+      function play(nr){
+       var audio = document.getElementById("currentSlide-"+nr);
+       console.log(audio);
+       audio.play();
+
+      }
+    </script>
+  </head>
+  <body>
+    <h2 style="text-align: center">Slideshow Gallery</h2>
+
+    <div class="container">
+      <div class="mySlides">
+        <div class="numbertext">1 / 6</div>
+        <img src="assets/images/clocks.jpeg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">2 / 6</div>
+        <img src="assets/images/highonlife.jpeg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">3 / 6</div>
+        <img src="assets/images/ocean.jpeg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">4 / 6</div>
+        <img src="assets/images/skyfull.jpeg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">5 / 6</div>
+        <img src="assets/images/wearethepeople.jpeg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">6 / 6</div>
+        <img src="img_snow_wide.jpg" style="width: 100%" />
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="assets/images/clocks.jpeg"
+            style="width: 100%"
+            onclick="currentSlide(1)"
+            alt="Clocks"
+          />
+          <audio id="audio-1">
+            <source src="assets/audio/clocks.mp3" type="audio/mp3" />
+            <source src="assets/audio/clocks.ogg" type="audio/ogg" />
+          </audio>
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="assets/images/highonlife.jpeg"
+            style="width: 100%"
+            onclick="currentSlide(2)"
+            alt="Highonlife"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="assets/images/ocean.jpeg"
+            style="width: 100%"
+            onclick="currentSlide(3)"
+            alt="Ocean"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="assets/images/skyfull.jpeg"
+            style="width: 100%"
+            onclick="currentSlide(4)"
+            alt="Sky Ful of stars"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="assets/images/wearethepeople.jpeg"
+            style="width: 100%"
+            onclick="currentSlide(5)"
+            alt="We are the people"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="img_snow.jpg"
+            style="width: 100%"
+            onclick="currentSlide(6)"
+            alt="Snowy Mountainszzzzzzzzz"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
